@@ -1,3 +1,3 @@
-newbbs
+NewBBS
 ======
-This a Chrome Plugin.
+This is a Chrome Plugin for BBS.
