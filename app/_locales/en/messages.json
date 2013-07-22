@@ -1,0 +1,58 @@
+﻿{
+  "add_item": {
+    "message": "add clock",
+    "description": "增加一个闹钟"
+  },
+  "daily_alerts": {
+    "message": "daily alerts",
+    "description": "每天都会提醒"
+  },
+  "delete": {
+    "message": "delete",
+    "description": "删除每天的提醒"
+  },
+  "clock": {
+    "message": "clock",
+    "description": "闹钟名称"
+  },
+  "date": {
+    "message": "date",
+    "description": "年月日"
+  },
+  "hour": {
+    "message": "hour",
+    "description": "设定的截至小时"
+  },
+  "minute": {
+    "message": "minute",
+    "description": "设定的截至分钟"
+  },
+  "content": {
+    "message": "content",
+    "description": "设置提醒的内容"
+  },
+  "set": {
+    "message": "set",
+    "description": "点击设定的按钮名称"
+  },
+  "cancel": {
+    "message": "cancel",
+    "description": "取消已经的设定"
+  },
+  "not_set": {
+    "message": "Time has not yet set a reminder or content",
+    "description": "是用户如果没有输入完整的提示"
+  },
+  "set_success": {
+    "message": "Set successfully!",
+    "description": "设置成功的提示"
+  },
+  "cancel_success": {
+    "message": "Cancel success!",
+    "description": "取消成功的提示"
+  },
+  "update": {
+    "message": "Version with updated details see tab page of the <a href=option.html> option </ a>",
+    "description": "版本更新的提示"
+  }
+}
