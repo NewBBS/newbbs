@@ -24,7 +24,6 @@ NewBBS Chrome Plugin 开发规范
     var clear = function(key){
       storage.clear();
     };
-
     return {
       set : set,
       get : get,
