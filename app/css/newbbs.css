@@ -1,0 +1,161 @@
+/*---------------------------------------------------------------
+  newbbs.css
+  Description: A private app theme designed by WeiShai.
+  Version: 1.0
+*---------------------------------------------------------------*/
+
+/* Reset
+----------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* Default styles
+----------------------------------------------------------------*/
+/* new clearfix */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix {zoom: 1;} /* IE6 */
+*:first-child+html .clearfix {zoom: 1;} /* IE7 */
+
+body{
+  line-height: 1;
+  font-family: "Helvetica Neue", "Microsoft Yahei", "微软雅黑", Tahoma, Arial, sans-serif;
+  width: 270px;
+  height: 600px;
+}
+#app{
+  width: 100%;
+  height: 100%;
+}
+
+/* Plugins styles
+----------------------------------------------------------------*/
+/* iPage */
+.ipage{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.ipage .ipage-panel{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin-left: 100%;
+  z-index: 2;
+  -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+  .ipage .active-panel{
+    margin-left: 0%;
+  }
+  .ipage .back-panel{
+    margin-left: -100%;
+  }
+.ipage-panel .panel-header{
+  position: relative;
+  background: #FFF;
+}
+.ipage-panel .panel-title{
+  margin: 0;
+  text-align: center;
+}
+.ipage-panel .panel-header > .back-btn{
+  position: absolute;
+  left: 20px;
+  top: 20%;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: all 1.2s ease-in-out;
+    -moz-transition: all 1.2s ease-in-out;
+    -o-transition: all 1.2s ease-in-out;
+    transition: all 1.2s ease-in-out;
+}
+  .active-panel .panel-header > .back-btn{
+    opacity: 1;
+  }
+
+.ipage-panel .panel-header > .option-btn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+
+/* Tabs */
+.tab-box{}
+.tab-box .tab-nav{}
+  .tab-box .tab-nav:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+    *zoom: 1;
+  }
+.tab-box .tab-nav > li{
+  float: left;
+}
+.tab-box .tab-nav .nav-btn{
+  cursor: pointer;
+}
+  .tab-box .tab-nav .btn-active{
+
+  }
+.tab-box .tab-content{
+
+}
+.tab-box .tab-content .tab-item{
+  display: none;
+}
+  .tab-box .tab-content > .item-active{
+    display: block;
+  }

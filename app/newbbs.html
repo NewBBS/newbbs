@@ -1,1 +1,35 @@
-start here
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="app description" />
+  <title>NewBBS</title>
+  <link rel="stylesheet" href="css/newbbs.css" />
+  <script type='text/javascript' src="js/common/jquery-1.9.0.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="page-wrap ipage">
+      <div class="ipage-panel active-panel">
+        <div id="newbbs-tab" class="tab-box">
+          <div class="tab-nav">
+            <div class="nav-btn btn-active" data-tab="#tab-lucky">抽奖</div>
+            <div class="nav-btn" data-tab="#tab-nearsite">团购</div>
+            <div class="nav-btn" data-tab="#tab-usualsite">二手</div>
+          </div>
+          <div class="tab-content">
+            <div id="tab-lucky" class="tab-item item-active">
+              <div id="luckyBox-wrap">
+                
+              </div>
+            </div>
+            <div id="tab-nearsite" class="tab-item">2</div>
+            <div id="tab-usualsite" class="tab-item">暂无记录</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type='text/javascript' src="js/newbbs-page/newbbs.js"></script>
+</body>
+</html>
