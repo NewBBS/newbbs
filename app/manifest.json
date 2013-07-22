@@ -1,0 +1,20 @@
+﻿{
+  "name": "NewBBS",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "This is a chrome plugin for BBS.",
+  "icons": {
+      "16": "img/newbbs_icon/icon_16.png",
+      "48": "img/newbbs_icon/icon_48.png",
+      "128": "img/newbbs_icon/icon_128.png"
+  },
+  "default_locale": "zh_CN",
+  "background": {
+	 "page": "back.html"
+  },
+  "browser_action": {
+     "default_icon": "img/newbbs_icon/icon_16.png",
+	   "default_title": "NewBBS",
+	   "default_popup": "newbbs.html"
+  }
+}
