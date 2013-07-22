@@ -10,6 +10,7 @@ NewBBS Chrome Plugin 开发规范
 
 模块定义例子
 -----------------------------
+
   var Newbbs = Newbbs || {};
   Newbbs.storage = (function(storage){
     var set = function(key, value){
