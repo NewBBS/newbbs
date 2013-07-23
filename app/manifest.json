@@ -17,11 +17,4 @@
 	   "default_title": "NewBBS",
 	   "default_popup": "newbbs.html"
   }
-  // ,
-  // "content_scripts": [
-  //   {
-  //     "matches": ["http://bbs.oa.com/*"],
-  //     "js": ["js/send.js"]
-  //   }
-  // ]
 }
