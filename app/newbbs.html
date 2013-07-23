@@ -4,31 +4,47 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="description" content="app description" />
   <title>NewBBS</title>
+  <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/newbbs.css" />
   <script type='text/javascript' src="js/common/jquery-1.9.0.min.js"></script>
 </head>
 <body>
-  <div id="app">
-    <div class="page-wrap ipage">
+  <div id="app" class="newbbs">
+    <div id="newbbsPage" class="page-wrap ipage">
       <div class="ipage-panel active-panel">
-        <div id="newbbs-tab" class="tab-box">
+        <div id="newbbsTab" class="tab-box">
           <div class="tab-nav">
-            <div class="nav-btn btn-active" data-tab="#tab-lucky">抽奖</div>
-            <div class="nav-btn" data-tab="#tab-nearsite">团购</div>
-            <div class="nav-btn" data-tab="#tab-usualsite">二手</div>
+            <div class="nav-btn btn-active" data-tab="#tab-lucky"><i class="icon-gift"></i>抽奖</div>
+            <div class="nav-btn" data-tab="#tab-groupon"><i class="icon-cart"></i>团购</div>
+            <!-- <div class="nav-btn" data-tab="#tab-usualsite">二手</div> -->
           </div>
           <div class="tab-content">
             <div id="tab-lucky" class="tab-item item-active">
-              <div id="luckyBox-wrap">
-                
+              <div id="luckyBox-wrap" class="luckyBox">
+                <div class="luckyBox-header">
+                  <h3 class="luckyBox-title">抽奖</h3>
+                  <div id="addLuckyBtn" class="go-btn" data-target="#page-addForm"><i class="icon-plus"></i></div>
+                </div>
               </div>
             </div>
-            <div id="tab-nearsite" class="tab-item">2</div>
+            <div id="tab-groupon" class="tab-item">2</div>
             <div id="tab-usualsite" class="tab-item">暂无记录</div>
           </div>
         </div>
       </div>
-    </div>
+      <div id="page-addForm" class="ipage-panel">
+        <div class="tab-nav">
+          <div class="nav-btn back-btn"><i class="icon-undo"></i></div>
+        </div>
+        <div id="addForm-wrap">
+          <form class="appForm">
+            <div class="input-text">
+              <input type="text">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!-- newbbsPage END -->
   </div>
   <script type='text/javascript' src="js/newbbs-page/newbbs.js"></script>
 </body>

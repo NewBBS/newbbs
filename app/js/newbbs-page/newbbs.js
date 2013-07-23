@@ -1,6 +1,12 @@
 //newbbs-page.js
 
 $(function () {
+  /* newbbsPage */
+  $('#newbbsPage').ipage();
+
+  /* newbbsTab */
+  $('#newbbsTab').tab();
+
 
 });//jQuery End
 

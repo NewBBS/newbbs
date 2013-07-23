@@ -73,6 +73,73 @@ body{
   height: 100%;
 }
 
+.btn{
+  background-color: #e1704b;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+/* App styles
+----------------------------------------------------------------*/
+.newbbs{}
+.newbbs .tab-nav{
+  padding: 12px;
+  background: #fafafa;
+  border-bottom: 1px solid #F2F2F2;
+}
+  .newbbs .tab-nav .nav-btn{
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #888;
+    cursor: pointer;
+  }
+  .newbbs .tab-nav .nav-btn i{
+    margin-right: 4px;
+    vertical-align: -1px;
+  }
+  .newbbs .tab-nav .nav-btn:hover{
+    color: #F0AFA1;
+  }
+  .newbbs .tab-nav .btn-active, .newbbs .tab-nav .btn-active:hover{
+    color: #e1704b;
+    font-weight: bold;
+    cursor: default;
+  }
+
+.luckyBox{}
+.luckyBox-header{
+  position: relative;
+  padding: 12px;
+  border-bottom: 1px solid #e1704b;
+}
+  .luckyBox-header .luckyBox-title{
+    text-align: center;
+    color: #666;
+    font-weight: bold;
+  }
+  .luckyBox-header #addLuckyBtn{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #888;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  .luckyBox-header #addLuckyBtn:hover{
+    color: #e1704b;
+    opacity: 1;
+  }
+
+
+
 /* Plugins styles
 ----------------------------------------------------------------*/
 /* iPage */
@@ -145,7 +212,7 @@ body{
   float: left;
 }
 .tab-box .tab-nav .nav-btn{
-  cursor: pointer;
+
 }
   .tab-box .tab-nav .btn-active{
 
