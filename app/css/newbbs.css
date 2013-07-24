@@ -68,22 +68,40 @@ body{
   width: 270px;
   height: 600px;
 }
+input, textarea{
+  font-family: "Helvetica Neue", "Microsoft Yahei", "微软雅黑", Tahoma, Arial, sans-serif;
+}
+
+/* Placeholder style*/
+::-webkit-input-placeholder { color: #CCC; }
+:-moz-placeholder { color: #DDD; }
+:-ms-input-placeholder { color: #DDD; }
+
 #app{
   width: 100%;
   height: 100%;
 }
 
 .btn{
+  display: inline-block;
+  padding: 8px 12px;
   background-color: #e1704b;
+  color: #fff;
+  text-align: center;
   -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  color: #fff;
-  display: inline-block;
-  padding: 8px 12px;
-  text-align: center;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
 }
+  .btn:hover{
+    background-color: #F0AFA1;
+  }
+  .btn:active{
+    background-color: #424242;
+  }
 
 /* App styles
 ----------------------------------------------------------------*/
@@ -113,6 +131,29 @@ body{
     font-weight: bold;
     cursor: default;
   }
+#newbbsPage .panel-header{
+  padding: 12px;
+  background: #fafafa;
+  border-bottom: 1px solid #F2F2F2;
+  height: 16px;
+}
+  #newbbsPage .panel-header .panel-title{
+    color: #888;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  #newbbsPage .panel-header .back-btn{
+    top: 12px;
+    left: 12px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #aaa;
+    -webkit-transition: color .2s ease-in-out, opacity 1.2s ease-in-out;
+    transition: color .2s ease-in-out, opacity 1.2s ease-in-out;
+  }
+  #newbbsPage .panel-header .back-btn:hover{
+    color: #F0AFA1;
+  }
 
 .luckyBox{}
 .luckyBox-header{
@@ -138,6 +179,38 @@ body{
     opacity: 1;
   }
 
+#addForm-wrap{
+  padding: 20px 12px;
+}
+.addForm{}
+.addForm .input-text{
+  margin-bottom: 20px;
+}
+.addForm .input-text > input{
+  margin: 0;
+  padding: 10px 5%;
+  width: 88.5%;
+  border: 1px solid #DBDBDB;
+  border-radius: 4px;
+  line-height: 1.4em;
+  letter-spacing: 1px;
+  outline: none;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+}
+  .addForm .input-text > input:hover{
+    border: 1px solid #A7A7A7;
+  }
+  .addForm .input-text > input:focus{
+    border: 1px solid #E1704B;
+  }
+  .addForm .input-text > .submit-btn{
+    width: 89.5%;
+    padding: 10px 5%;
+    letter-spacing: 4px;
+    font-weight: bold
+  }
+
 
 
 /* Plugins styles
@@ -155,10 +228,10 @@ body{
   position: absolute;
   margin-left: 100%;
   z-index: 2;
-  -webkit-transition: all .4s ease-in-out;
-    -moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
   .ipage .active-panel{
     margin-left: 0%;
