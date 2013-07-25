@@ -211,6 +211,19 @@ input, textarea{
     font-weight: bold
   }
 
+.task-list{}
+.task-list .task-item{
+  padding: 12px;
+}
+  .task-list .task-item .item-title{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    color: #666;
+    text-overflow: ellipsis;
+  }
+
 
 
 /* Plugins styles
