@@ -213,8 +213,13 @@ input, textarea{
 
 .task-list{}
 .task-list .task-item{
-  padding: 12px;
+  padding: 12px 32px 12px 12px;
+  border-bottom: 1px solid #eee;
 }
+  .task-list .task-item:hover{
+    border-left: 3px solid #e1704b;
+    background-color: #fefbed;
+  }
   .task-list .task-item .item-title{
     width: 100%;
     white-space: nowrap;
@@ -223,6 +228,9 @@ input, textarea{
     color: #666;
     text-overflow: ellipsis;
   }
+    .task-list .task-item:hover .item-title{
+      color: #e1704b;
+    }
 
 
 
