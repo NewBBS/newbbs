@@ -215,6 +215,7 @@ input, textarea{
 .task-list .task-item{
   padding: 12px 32px 12px 12px;
   border-bottom: 1px solid #eee;
+  border-left: 3px solid #fff;
 }
   .task-list .task-item:hover{
     border-left: 3px solid #e1704b;
@@ -232,6 +233,20 @@ input, textarea{
       color: #e1704b;
     }
 
+/* readerBox */
+.readerBox{}
+.readerBox #getPostBtn{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #888;
+  opacity: 0.5;
+  cursor: pointer;
+}
+  .luckyBox-header #getPostBtn:hover{
+    color: #e1704b;
+    opacity: 1;
+  }
 
 
 /* Plugins styles

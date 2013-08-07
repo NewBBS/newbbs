@@ -9,6 +9,12 @@ define(function(require) {
 
     /* newbbsTab */
     $('#newbbsTab').tab();
+
+    $('#getPostBtn').on('click', function () {
+      console.log('14')
+      chrome.tabs.executeScript(null, {file: "loadPost.js"});
+    });
+
   });
 
 });
