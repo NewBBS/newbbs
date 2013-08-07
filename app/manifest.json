@@ -16,5 +16,6 @@
      "default_icon": "img/newbbs_icon/icon_16.png",
 	   "default_title": "NewBBS",
 	   "default_popup": "newbbs.html"
-  }
+  },
+  "permissions": ["notifications", "idle", "background"]
 }
