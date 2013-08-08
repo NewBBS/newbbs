@@ -13,14 +13,14 @@ define(function(require, exports, module) {
         //notification.replaceId = '消息1';
         notification.show();
 	};
-	exports.show_html_Notification = function (url) {
-	    var notification = window.webkitNotifications.createHTMLNotification(url);
-        notification.onerror = function() {};
-        notification.onclose = function() {};
-        notification.onshow = function() {};
-        notification.onclick = function() {this.cancel();};
-		notification.ondisplay = function() {};
-        //notification.replaceId = '消息1';
-        notification.show();
-	};
+	// exports.show_html_Notification = function (url) {   chrome已经不支持了
+	//     var notification = window.webkitNotifications.createHTMLNotification(url);
+ //        notification.onerror = function() {};
+ //        notification.onclose = function() {};
+ //        notification.onshow = function() {};
+ //        notification.onclick = function() {this.cancel();};
+	// 	notification.ondisplay = function() {};
+ //        //notification.replaceId = '消息1';
+ //        notification.show();
+	// };
 })
