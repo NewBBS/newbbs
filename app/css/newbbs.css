@@ -213,6 +213,7 @@ input, textarea{
 
 .task-list{}
 .task-list .task-item{
+  position: relative;
   padding: 12px 32px 12px 12px;
   border-bottom: 1px solid #eee;
   border-left: 3px solid #fff;
@@ -231,6 +232,20 @@ input, textarea{
   }
     .task-list .task-item:hover .item-title{
       color: #e1704b;
+    }
+  .task-list .task-item .edit-btn{
+    position: absolute;
+    right: 12px;
+    bottom: 9px;
+    color: #aaa;
+    cursor: pointer;
+    display: none;
+  }
+    .task-list .task-item:hover .edit-btn{
+      display: block;
+    }
+    .task-list .task-item:hover .edit-btn:hover{
+      color: #666;
     }
 
 /* readerBox */
