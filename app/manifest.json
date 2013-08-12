@@ -17,5 +17,5 @@
 	   "default_title": "NewBBS",
 	   "default_popup": "newbbs.html"
   },
-  "permissions": ["notifications", "storage", "idle", "tabs", "http://*/*" ]
+  "permissions": ["notifications", "storage", "idle", "tabs", "http://bbs.oa.com/" ]
 }
