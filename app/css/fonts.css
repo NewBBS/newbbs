@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-home, .icon-home-2, .icon-grid, .icon-list, .icon-gift, .icon-signup, .icon-volume-high, .icon-volume-medium, .icon-volume-low, .icon-tags, .icon-alarm, .icon-clock, .icon-clock-2, .icon-tv, .icon-undo, .icon-undo-2, .icon-cog, .icon-fire, .icon-info, .icon-notification, .icon-cart, .icon-coin, .icon-star, .icon-heart, .icon-heart-2, .icon-image, .icon-images, .icon-arrow-up, .icon-arrow-right, .icon-arrow-down, .icon-arrow-left, .icon-checkmark, .icon-close, .icon-volume-mute, .icon-user, .icon-plus, .icon-minus, .icon-loop, .icon-expand, .icon-redo, .icon-bubble, .icon-bubble-2, .icon-bubbles {
+.icon-home, .icon-home-2, .icon-grid, .icon-list, .icon-gift, .icon-signup, .icon-volume-high, .icon-volume-medium, .icon-volume-low, .icon-tags, .icon-alarm, .icon-clock, .icon-clock-2, .icon-tv, .icon-undo, .icon-undo-2, .icon-cog, .icon-fire, .icon-info, .icon-notification, .icon-cart, .icon-coin, .icon-star, .icon-heart, .icon-heart-2, .icon-image, .icon-images, .icon-arrow-up, .icon-arrow-right, .icon-arrow-down, .icon-arrow-left, .icon-checkmark, .icon-close, .icon-volume-mute, .icon-user, .icon-plus, .icon-minus, .icon-loop, .icon-expand, .icon-redo, .icon-bubble, .icon-bubble-2, .icon-bubbles, .icon-compose {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -165,4 +165,7 @@ you can use the generic selector below, but it's slower:
 }
 .icon-bubbles:before {
 	content: "\e02a";
+}
+.icon-compose:before {
+	content: "\e02b";
 }

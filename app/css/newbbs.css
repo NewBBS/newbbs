@@ -213,8 +213,10 @@ input, textarea{
 
 .task-list{}
 .task-list .task-item{
+  position: relative;
   padding: 12px 32px 12px 12px;
   border-bottom: 1px solid #eee;
+  border-left: 3px solid #fff;
 }
   .task-list .task-item:hover{
     border-left: 3px solid #e1704b;
@@ -231,7 +233,35 @@ input, textarea{
     .task-list .task-item:hover .item-title{
       color: #e1704b;
     }
+  .task-list .task-item .edit-btn{
+    position: absolute;
+    right: 12px;
+    bottom: 9px;
+    color: #aaa;
+    cursor: pointer;
+    display: none;
+  }
+    .task-list .task-item:hover .edit-btn{
+      display: block;
+    }
+    .task-list .task-item:hover .edit-btn:hover{
+      color: #666;
+    }
 
+/* readerBox */
+.readerBox{}
+.readerBox #getPostBtn{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #888;
+  opacity: 0.5;
+  cursor: pointer;
+}
+  .luckyBox-header #getPostBtn:hover{
+    color: #e1704b;
+    opacity: 1;
+  }
 
 
 /* Plugins styles

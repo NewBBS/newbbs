@@ -15,7 +15,7 @@
           <div class="tab-nav">
             <div class="nav-btn btn-active" data-tab="#tab-lucky"><i class="icon-gift"></i>抽奖</div>
             <div class="nav-btn" data-tab="#tab-groupon"><i class="icon-cart"></i>团购</div>
-            <!-- <div class="nav-btn" data-tab="#tab-usualsite">二手</div> -->
+            <div class="nav-btn" data-tab="#tab-reader">Reader</div>
           </div>
           <div class="tab-content">
             <div id="tab-lucky" class="tab-item item-active">
@@ -27,17 +27,44 @@
                 <div class="luckyBox-main">
                   <div class="task-list">
                     <div class="task-item">
-                      <a href="https://www.google.com.hk/"><h4 class="item-title">寻侠2周年庆典，就是要2，本帖支持水到底！</h4></a>
+                      <a href=""><h4 class="item-title">寻侠2周年庆典，就是要2，本帖支持水到底！</h4></a>
+                      <div class="edit-btn"><i class="icon-compose"></i></div>
+                      <div class="item-bar">
+                        <ul class="item-menu">
+                          <li class="set-btn"></li>
+                          <li class="set-btn"></li>
+                          <li class="set-btn"></li>
+                          <li class="set-btn"></li>
+                        </ul>
+                      </div>
                     </div>
                     <div class="task-item">
-                      <a href="https://www.google.com.hk/"><h4 class="item-title">QQ浏览器“请你喝茶”体验全新7.4版有惊喜</h4></a>
-                      <div id="clearInterval">停止</div>
+                      <a href=""><h4 class="item-title">QQ浏览器“请你喝茶”体验全新7.4版有惊喜</h4></a>
+                      <div class="edit-btn"><i class="icon-compose"></i></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div id="tab-groupon" class="tab-item">2</div>
+            <div id="tab-reader" class="tab-item">
+              <div id="readerBox-wrap" class="luckyBox readerBox">
+                <div class="luckyBox-header">
+                  <h3 class="luckyBox-title">阅读器</h3>
+                  <div id="getPostBtn"><i class="icon-loop"></i></div>
+                </div>
+                <div class="luckyBox-main">
+                  <div class="task-list">
+                    <div class="task-item">
+                      <a href=""><h4 class="item-title">寻侠2周年庆典，就是要2，本帖支持水到底！</h4></a>
+                    </div>
+                    <div class="task-item">
+                      <a href=""><h4 class="item-title">QQ浏览器“请你喝茶”体验全新7.4版有惊喜</h4></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -52,7 +79,10 @@
               <input type="text" id="tie-url" placeholder="网址" name="luckyUrl">
             </div>
             <div class="input-text">
-              <input type="text" id="tie-title" placeholder="发帖内容" name="luckyText">
+              <input type="text" id="tie-title" placeholder="标题" name="luckyTitle">
+            </div>
+            <div class="input-text">
+              <input type="text" placeholder="发帖内容" name="luckyText">
             </div>
             <div class="input-text">
               <input type="text" id="tie-floor" placeholder="中奖楼层" name="luckyFloor">
