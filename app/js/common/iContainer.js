@@ -15,12 +15,12 @@ define(function(require, exports, module) {
  		this.container.html(post.getAll());
  		this._init();
  	};
- 	container.prototype._init = function(){	
+ 	container.prototype._init = function(){
  		//开始，暂停
  		this.container.on('click', '.btn-bd', function(){
  			var btn = $(this);
  			var id = '#' + btn.parent().attr('id');
- 			var class = btn.attr(class);
+ 			var class = btn.attr('class');
  			//目前是运行状态，点击后需要暂停
  			if(class == 'begin'){
  				post.end(id);

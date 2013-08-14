@@ -233,6 +233,13 @@ input, textarea{
     .task-list .task-item:hover .item-title{
       color: #e1704b;
     }
+  .task-list .task-item-edit{
+    
+  }
+    .task-list .task-item-edit .item-bar{
+      height: 28px;
+    }
+
   .task-list .task-item .edit-btn{
     position: absolute;
     right: 12px;

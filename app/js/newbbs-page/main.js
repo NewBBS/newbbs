@@ -17,6 +17,15 @@ define(function(require) {
 
     /* newbbsTab */
     $('#newbbsTab').tab();
+
+    /* page action */
+    $('.task-list').on('click', '.task-item .edit-btn', function(event) {
+      $(this).closest('.task-item').addClass('task-item-active');
+      console.log('24')
+
+      return false;
+    });
+
     //页面初始化函数，从数据库获取帖子数
     // var keys = storage.getAllKey();
     // for(var i=0, len=keys.length;i<len; i++ ){
