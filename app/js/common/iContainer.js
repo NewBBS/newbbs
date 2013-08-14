@@ -46,7 +46,7 @@ define(function(require, exports, module) {
  	//post是一个json对象
  	container.prototype.add = function(post){
  		var id = +(new Date());
- 		var item = '<div class="task-item" id="' + id + '"><a href="' + post.url +'"><h4 class="item-title">'+ post.title +'</h4></a></div>';
+ 		var item = '<div class="task-item" id="' + id + '"><a href="' + post.url +'"><h4 class="item-title">'+ post.title +'</h4></a><div class="edit-btn"><i class="icon-pencil"></i></div><div class="item-bar"><ul class="item-menu"><li class="set-btn" title=""><i class="icon-play"></i></li><li class="set-btn"><i class="icon-star"></i></li><li class="set-btn"><i class="icon-trashcan"></i></li></ul></div></div>';
       	this.container.append(item);
       	var post = new ipost(post.url, post.title, post.floor, post.tabid);
       	post.add(id);
