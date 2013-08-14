@@ -236,7 +236,7 @@ input, textarea{
   .task-list .task-item .edit-btn{
     position: absolute;
     right: 12px;
-    bottom: 9px;
+    top: 12px;
     color: #aaa;
     cursor: pointer;
     display: none;
@@ -246,6 +246,23 @@ input, textarea{
     }
     .task-list .task-item:hover .edit-btn:hover{
       color: #666;
+    }
+  .task-list .item-bar{
+    margin-top: 12px;
+  }
+  .task-list .item-bar .item-menu{}
+  .task-list .item-menu .set-btn{
+    display: inline-block;
+    padding: 0 8%;
+    color: #b2b2b2;
+    border-left: 1px solid #DDD;
+    cursor: pointer;
+  }
+  .task-list .item-menu .set-btn:first-child{
+    border-left: none;
+  }
+    .task-list .item-menu .set-btn:hover{
+      color: #888;
     }
 
 /* readerBox */

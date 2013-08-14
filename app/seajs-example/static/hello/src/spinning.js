@@ -54,7 +54,7 @@ define(function(require, exports, module) {
     return this;
   }
 
-  Spinning.prototype._spin = function() {
+  Spinning.prototype._spin = function() {  //这个函数的目的是开始的时候让icon自动旋转
 
     $(this.spinnings).each(function(i, fn) {
       setTimeout(fn, Math.ceil(random(3000)));
@@ -66,4 +66,3 @@ define(function(require, exports, module) {
   function random(x) { return Math.random() * x };
 
 });
-
