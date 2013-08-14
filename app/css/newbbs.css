@@ -248,9 +248,12 @@ input, textarea{
       color: #666;
     }
   .task-list .item-bar{
+    height: 0;
+    overflow: hidden;
+  }
+  .task-list .item-bar .item-menu{
     margin-top: 12px;
   }
-  .task-list .item-bar .item-menu{}
   .task-list .item-menu .set-btn{
     display: inline-block;
     padding: 0 8%;
