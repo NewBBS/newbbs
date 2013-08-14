@@ -248,7 +248,6 @@ input, textarea{
       color: #666;
     }
   .task-list .item-bar{
-    height: 0;
     overflow: hidden;
   }
   .task-list .item-bar .item-menu{

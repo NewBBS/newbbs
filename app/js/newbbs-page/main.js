@@ -1,13 +1,9 @@
 define(function(require) {
   require('iPage');
   require('iTab');
-  var storage = require('iStorage');
-  // var iConnect = require('iConnect.js');
-  // var connect = new iConnect('send');
 
   var iContainer = require('iContainer');
   var iFrequency = require('iFrequency');
-  var bg = chrome.extension.getBackgroundPage();  //获取后台页面的window属性
   var container = new iContainer('#task-list');
   
 
@@ -17,15 +13,7 @@ define(function(require) {
 
     /* newbbsTab */
     $('#newbbsTab').tab();
-    //页面初始化函数，从数据库获取帖子数
-    // var keys = storage.getAllKey();
-    // for(var i=0, len=keys.length;i<len; i++ ){
-    //   if(!isNaN(keys[i])) {  //key为数字才是需要的帖子数据
-    //     var value = storage.get(keys[i]);
-    //     var item = '<div class="task-item"><a href="' + value.url +'"><h4 class="item-title">'+ value.title +'</h4></a></div>';
-    //     $('.task-list').append(item);
-    //   }
-    // }
+
     container.render();
 
 	  //点击添加监控后获取当前标签页的url和标题
@@ -37,34 +25,18 @@ define(function(require) {
       });       
     });
 
-    //在pop页面取消和开始对网页的监控
-    // document.querySelector('#clearInterval').addEventListener('click', function() {
-    //   var tid;
-    //   var url
-    //   tid = storage.get('http://bbs.oa.com/forum/7935/thread/view/235015');   
-    //   bg.stop(tid);     
-    // });
-
-    //新增一个监控帖子的记录
+    //点击完成新增一个监控帖子的记录
     document.querySelector('#submit-addForm').addEventListener('click', function() {
     	container.add({
           url: $('#tie-url').val(),
           title: $('#tie-title').val(),
           floor: $('#tie-floor').val(),
-          tabid: parseInt($('#tie-tabid').val())
+          tabid: parseInt($('#tie-tabid').val()),
+          status: 1
       })
-
       //返回主页面并将新增的数据添加到主页面
       $('.icon-undo').trigger('click');
-
-      //在后台将js注入到bbs页面
-      //bg.recycle(post.tabid, post.url);   
     });
-
-    
-
-	//var bg = chrome.extension.getBackgroundPage();   //调用背景的函数库
-	//chrome.extension.getViews(); 获取前台的页面的window 
   });
 
 });
