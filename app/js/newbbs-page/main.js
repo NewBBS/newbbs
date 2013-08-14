@@ -1,12 +1,12 @@
 define(function(require) {
-  require('iPage.js');
-  require('iTab.js');
-  var storage = require('iStorage.js');
+  require('iPage');
+  require('iTab');
+  var storage = require('iStorage');
   // var iConnect = require('iConnect.js');
   // var connect = new iConnect('send');
 
-  var iContainer = require('iContainer.js');
-  var iFrequency = require('iFrequency.js');
+  var iContainer = require('iContainer');
+  var iFrequency = require('iFrequency');
   var bg = chrome.extension.getBackgroundPage();  //获取后台页面的window属性
   var container = new iContainer('#task-list');
   
@@ -27,13 +27,6 @@ define(function(require) {
     //   }
     // }
     container.render();
-
-
-    // $('.task-list').on('click', '.task-item', function(tar1){
-    //   if(tar1.target.id == ''){
-        
-    //   }
-    // })
 
 	  //点击添加监控后获取当前标签页的url和标题
     document.querySelector('.icon-plus').addEventListener('click', function() {
@@ -68,10 +61,7 @@ define(function(require) {
       //bg.recycle(post.tabid, post.url);   
     });
 
-    //在pop页面里面要打开链接必须用下面的方式
-    $('.task-list').on('click', '.task-item a', function(){
-        chrome.tabs.create({'url': $(this).attr('href')});
-    })
+    
 
 	//var bg = chrome.extension.getBackgroundPage();   //调用背景的函数库
 	//chrome.extension.getViews(); 获取前台的页面的window 

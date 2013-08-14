@@ -4,7 +4,7 @@ define(function(require, exports, module) {
  * ====================== */
  	var $ = require('jquery');
  	console.log($);
- 	var ipost = require('iPost.js');
+ 	var ipost = require('iPost');
 
  	function container(id){
  		this.container = $(id);
@@ -20,16 +20,16 @@ define(function(require, exports, module) {
  		this.container.on('click', '.btn-bd', function(){
  			var btn = $(this);
  			var id = '#' + btn.parent().attr('id');
- 			var class = btn.attr(class);
+ 			var className = btn.attr('class');
  			//目前是运行状态，点击后需要暂停
- 			if(class == 'begin'){
+ 			if(className.indexOf('begin') != -1){
  				post.end(id);
  				//下面应该还有颜色提示
- 				btn.attr('class', 'stop');
+ 				btn.addClass('stop');
  			} else {
  				//开始监听帖子
  				post.begin(id);
- 				btn.attr('class', 'begin');
+ 				btn.removeClass('stop');
  			}
  		})
  		//删除帖子
@@ -40,6 +40,11 @@ define(function(require, exports, module) {
  			$(id).remove();
  			post.delete(id);
  		})
+
+ 		//在pop页面里面要打开链接必须用下面的方式
+	    this.container.on('click', '.task-item a', function(){
+	        chrome.tabs.create({'url': $(this).attr('href')});
+	    })
 
  		return this;
  	};
@@ -52,5 +57,6 @@ define(function(require, exports, module) {
       	post.add(id);
  		return this;
  	};
+
 	module.exports = container;
 })

@@ -2,7 +2,7 @@ define(function(require, exports, module) {
 /* 
  * 帖子对象
  * ====================== */
- 	var storage = require('iStorage.js');
+ 	var storage = require('iStorage');
  	var bg = chrome.extension.getBackgroundPage();
 
  	function Post(url, title, floor, tabid, container){
@@ -25,7 +25,8 @@ define(function(require, exports, module) {
  	};
  	Post.prototype.add = function(id){
  		storage.set(id, this);
- 		bg.recycle(this.tabid, this.url); 
+ 		//bg.recycle(this.tabid, this.url); 
+ 		console.log('ok')
  	};
  	Post.prototype.begin = function(id){
  		var tie = storage.get(id);
