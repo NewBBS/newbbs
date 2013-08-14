@@ -18,7 +18,7 @@ define(function(require, exports, module) {
 			}
 			return keys; 
 		},
-		getKeyByValue : function(value){ //value是obj,key,value
+		getKeyByValue : function(value){ //value是数组,key,value
 			for (var i=0, len = window.localStorage.length; i  <  len; i++){
 			    var key = window.localStorage.key(i);
 			    if(this.get(key)[value[0]] == value[1]){

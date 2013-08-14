@@ -17,7 +17,7 @@
 		var tid;
 		tid = setInterval(function(){
 			injectPage(tabid, url)
-		}, 2000);
+		}, 1000);
 		window.localStorage.setItem(url, tid);
 	}
 
@@ -38,21 +38,21 @@
 	     	//停止刷新，开始提交
 	     	clearInterval(storage.get(port.sender.url));
 	     	chrome.tabs.onUpdated.addListener(submit);  //监听注入页面的刷新事件
-	     	//chrome.tabs.update(369, {url: 'http://bbs.oa.com/forum/7939/thread/view/235483'});
-	     	chrome.tabs.executeScript(port.sender.tab.id, {file: "js/common/submit.js"});
+	     	chrome.tabs.update(port.sender.tab.id, {url: 'http://bbs.oa.com/forum/7935/thread/view/235015'});
+	     	//chrome.tabs.executeScript(port.sender.tab.id, {file: "js/common/submit.js"});
 	    }
       })
     })
 
 	//在注入页面的刷新之后再注入提交代码
     function submit(id){
-    	if(!(--num)){
-    		chrome.tabs.onUpdated.removeListener(submit);  //取消更新监听事件，当发帖数达到的时候
-    		var obj = {img : 'a.jpg', title : '弹出', content : '你好'}
-    		notification.show_normal_Notification(obj);
-    	}
-    	//chrome.tabs.update(id, {url: 'http://bbs.oa.com/forum/7939/thread/view/235483'}); 
- 		chrome.tabs.executeScript(id, {file: "js/common/submit.js"});
+    	// if(!(--num)){
+    	// 	chrome.tabs.onUpdated.removeListener(submit);  //取消更新监听事件，当发帖数达到的时候
+    	// 	var obj = {img : 'a.jpg', title : '弹出', content : '你好'}
+    	// 	notification.show_normal_Notification(obj);
+    	// }
+    	chrome.tabs.update(id, {url: 'http://bbs.oa.com/forum/7935/thread/view/235015'}); 
+ 		//chrome.tabs.executeScript(id, {file: "js/common/submit.js"});
  	}
 
 // var views = chrome.extension.getViews({type:"popup"});  获取不到前台的数据
