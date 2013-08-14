@@ -33,11 +33,12 @@
       port.onMessage.addListener(function(msg) {
       	var url = port.sender.url;
       	var tabid = port.sender.tab.id;
+      	var tid = storage.get(port.sender.url) || -1;
         var key = storage.getKeyByValue(['url', url])
         var target_floor = storage.get(key).floor;  //获取用户输入的目标楼层
-        var now_time = frequency.getTime(msg.floor, target_floor);
-        if(time != now_time){
-        	clearInterval(storage.get(port.sender.url));
+        var now_time = frequency.getTime(msg.floor, target_floor, tid);
+        if(now_time){
+        	clearInterval(tid);
         	window.recycle(tabid, url, now_time);
         }
         var u_distance = 1;   //用户输入的在目标帖子的误差范围

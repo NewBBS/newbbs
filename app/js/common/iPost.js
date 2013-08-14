@@ -15,7 +15,8 @@ define(function(require, exports, module) {
  	};
  	Post.prototype.add = function(id){
  		storage.set(id, this);
- 		bg.recycle(this.tabid, this.url); 
+ 		chrome.tabs.executeScript(this.tabid, {file: "js/common/inject.js"});
+ 		//bg.recycle(this.tabid, this.url); 
  	};
  	Post.prototype.begin = function(id){
  		var tie = storage.get(id);
