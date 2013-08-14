@@ -1,8 +1,7 @@
 seajs.config({
   alias: {
-    "jquery": "jquery-1.9.0.min.js"
-  },
-  preload:"jquery"
+    "jquery": "jquery.js"
+  }
 });
 
 seajs.use("./js/newbbs-page/main.js");
