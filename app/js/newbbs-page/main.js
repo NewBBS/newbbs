@@ -17,7 +17,6 @@ define(function(require) {
 
     /* newbbsTab */
     $('#newbbsTab').tab();
-
     //页面初始化函数，从数据库获取帖子数
     // var keys = storage.getAllKey();
     // for(var i=0, len=keys.length;i<len; i++ ){

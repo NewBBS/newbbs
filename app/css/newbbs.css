@@ -213,8 +213,10 @@ input, textarea{
 
 .task-list{}
 .task-list .task-item{
+  position: relative;
   padding: 12px 32px 12px 12px;
   border-bottom: 1px solid #eee;
+  border-left: 3px solid #fff;
 }
   .task-list .task-item:hover{
     border-left: 3px solid #e1704b;
@@ -231,7 +233,52 @@ input, textarea{
     .task-list .task-item:hover .item-title{
       color: #e1704b;
     }
+  .task-list .task-item .edit-btn{
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    color: #aaa;
+    cursor: pointer;
+    display: none;
+  }
+    .task-list .task-item:hover .edit-btn{
+      display: block;
+    }
+    .task-list .task-item:hover .edit-btn:hover{
+      color: #666;
+    }
+  .task-list .item-bar{
+    margin-top: 12px;
+  }
+  .task-list .item-bar .item-menu{}
+  .task-list .item-menu .set-btn{
+    display: inline-block;
+    padding: 0 8%;
+    color: #b2b2b2;
+    border-left: 1px solid #DDD;
+    cursor: pointer;
+  }
+  .task-list .item-menu .set-btn:first-child{
+    border-left: none;
+  }
+    .task-list .item-menu .set-btn:hover{
+      color: #888;
+    }
 
+/* readerBox */
+.readerBox{}
+.readerBox #getPostBtn{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #888;
+  opacity: 0.5;
+  cursor: pointer;
+}
+  .luckyBox-header #getPostBtn:hover{
+    color: #e1704b;
+    opacity: 1;
+  }
 
 
 /* Plugins styles

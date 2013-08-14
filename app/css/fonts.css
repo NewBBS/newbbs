@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-home, .icon-home-2, .icon-grid, .icon-list, .icon-gift, .icon-signup, .icon-volume-high, .icon-volume-medium, .icon-volume-low, .icon-tags, .icon-alarm, .icon-clock, .icon-clock-2, .icon-tv, .icon-undo, .icon-undo-2, .icon-cog, .icon-fire, .icon-info, .icon-notification, .icon-cart, .icon-coin, .icon-star, .icon-heart, .icon-heart-2, .icon-image, .icon-images, .icon-arrow-up, .icon-arrow-right, .icon-arrow-down, .icon-arrow-left, .icon-checkmark, .icon-close, .icon-volume-mute, .icon-user, .icon-plus, .icon-minus, .icon-loop, .icon-expand, .icon-redo, .icon-bubble, .icon-bubble-2, .icon-bubbles {
+.icon-home, .icon-home-2, .icon-grid, .icon-list, .icon-gift, .icon-signup, .icon-volume-high, .icon-volume-medium, .icon-volume-low, .icon-tags, .icon-alarm, .icon-clock, .icon-clock-2, .icon-tv, .icon-undo, .icon-undo-2, .icon-cog, .icon-fire, .icon-info, .icon-notification, .icon-cart, .icon-coin, .icon-star, .icon-heart, .icon-heart-2, .icon-image, .icon-images, .icon-arrow-up, .icon-arrow-right, .icon-arrow-down, .icon-arrow-left, .icon-checkmark, .icon-close, .icon-volume-mute, .icon-user, .icon-plus, .icon-minus, .icon-loop, .icon-expand, .icon-redo, .icon-bubble, .icon-bubble-2, .icon-bubbles, .icon-compose, .icon-play, .icon-pause, .icon-remove, .icon-menu, .icon-iphone, .icon-switch, .icon-pencil, .icon-star-2, .icon-heart-3, .icon-trashcan, .icon-trash-stroke, .icon-trash, .icon-trash-alt, .icon-grid-2 {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -165,4 +165,49 @@ you can use the generic selector below, but it's slower:
 }
 .icon-bubbles:before {
 	content: "\e02a";
+}
+.icon-compose:before {
+	content: "\e02b";
+}
+.icon-play:before {
+	content: "\e02c";
+}
+.icon-pause:before {
+	content: "\e02d";
+}
+.icon-remove:before {
+	content: "\e02e";
+}
+.icon-menu:before {
+	content: "\e02f";
+}
+.icon-iphone:before {
+	content: "\e030";
+}
+.icon-switch:before {
+	content: "\e031";
+}
+.icon-pencil:before {
+	content: "\e032";
+}
+.icon-star-2:before {
+	content: "\e033";
+}
+.icon-heart-3:before {
+	content: "\e034";
+}
+.icon-trashcan:before {
+	content: "\e035";
+}
+.icon-trash-stroke:before {
+	content: "\e036";
+}
+.icon-trash:before {
+	content: "\e037";
+}
+.icon-trash-alt:before {
+	content: "\e038";
+}
+.icon-grid-2:before {
+	content: "\e039";
 }
