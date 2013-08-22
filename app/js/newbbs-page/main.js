@@ -8,6 +8,7 @@ define(function(require) {
   
 
   $(function () {
+    $('body').hide().show(10);//兼容Chrome29渲染bug
     /* newbbsPage */
     $('#newbbsPage').ipage();
 
