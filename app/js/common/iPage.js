@@ -11,7 +11,7 @@ define(function(require, exports, module) {
         var self = this;
         this.$element = element;
         this.backArray = [];
-        this.$activePanel = $(element).children('.active-panel');
+        this.$activePanel = this.$element.children('.active-panel');
         //console.log(self.$activePanel)
 
         this.$element.on('click.go', '.ipage-panel .go-btn', function (event) {
