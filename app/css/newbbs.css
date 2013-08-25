@@ -222,6 +222,9 @@ input, textarea{
     border-left: 3px solid #e1704b;
     background-color: #fefbed;
   }
+  .task-list .task-item > a{
+    display: block;
+  }
   .task-list .task-item .item-title{
     width: 100%;
     white-space: nowrap;
