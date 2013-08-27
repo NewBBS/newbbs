@@ -5,7 +5,6 @@ define(function(require) {
   var iContainer = require('iContainer');
   var iFrequency = require('iFrequency');
   var container = new iContainer('#task-list');
-  
 
   $(function () {
     //$('body').hide().show(10);//兼容Chrome29渲染bug
@@ -52,15 +51,21 @@ define(function(require) {
     chrome.extension.onConnect.addListener(function(port) {
       //console.assert(port.action == "loadPost");
       port.onMessage.addListener(function(msg) {
-        if (msg.action == "getPostList"){
-          //console.log('msg good')
-          var itemsHtml = '';
-          for(var curItem = 0; curItem < 10; curItem++){
-            console.log(curItem)
-            itemsHtml += '<div class="task-item"><a href="'+msg.data[curItem].url+'"><h4 class="item-title">' +msg.data[curItem].title+ '</h4></a></div>'
-          }
-          //console.log(itemsHtml)
-          $('#tab-reader .luckyBox-main .task-list').html(itemsHtml);
+        switch(msg.action){
+          case 'getPostList':
+            var itemsHtml = '';
+            for(var curItem = 0; curItem < 10; curItem++){
+              console.log(curItem)
+              itemsHtml += '<div class="task-item"><a href="'+msg.data[curItem].url+'"><h4 class="item-title">' +msg.data[curItem].title+ '</h4></a></div>'
+            }
+            //console.log(itemsHtml)
+            $('#tab-reader .luckyBox-main .task-list').html(itemsHtml);
+            break;
+          case 'getPost':
+            alert(msg.data)
+            break;
+          default:
+            break;
         }
       });
     });
@@ -71,8 +76,13 @@ define(function(require) {
 
     $('#tab-reader .luckyBox-main').on('click', '.task-item > a', function () {
       var curPostUrl = $(this).attr('href');
-      chrome.tabs.create({url}, function callback)
-      pageExt.postMessage({action: 'getPost', posturl: curPostUrl});
+      chrome.tabs.create({url: curPostUrl, selected: false}, function(tab){
+        chrome.tabs.executeScript(tab.id, {file: "./js/newbbs-page/loadPost.js"}, function () {
+          pageExt.postMessage({action: 'getPost', posturl: curPostUrl});
+        });
+      });
+      //pageExt.postMessage({action: 'getPost', posturl: curPostUrl});
+      return false;
     });
 
   });//end jQuery

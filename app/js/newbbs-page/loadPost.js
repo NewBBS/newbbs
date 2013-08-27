@@ -1,18 +1,21 @@
 console.log('join success')
 var siteUrl = location.origin
-  , postTitle
   , msgExt = chrome.extension.connect({name: "postPage"})
 
 chrome.extension.onConnect.addListener(function(port) {
   port.onMessage.addListener(function(msg) {
     switch(msg.action){
       case 'getPostList':
-        postTitle = getPostTitle()
+        var postTitle = getPostTitle()
         console.log(postTitle)
         msgExt.postMessage({action: 'getPostList', data: postTitle});
         break;
       case 'getPost':
-        
+        window.onload = function () {
+          var postContent = getPost();
+          msgExt.postMessage({action: 'getPost', data: postContent});
+        }
+        break;
       default:
         break;
     }
@@ -33,4 +36,11 @@ function getPostTitle() {
     }
   }
   return targetAry;
+}
+
+function getPost(filter) {
+  var jqFilter = filter || '.postmessage .t_msgfont span'
+    , targetHtml = document.querySelector(jqFilter)
+
+  return targetHtml;
 }
