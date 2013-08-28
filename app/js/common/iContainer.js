@@ -2,8 +2,6 @@ define(function(require, exports, module) {
 /* 
  * 帖子容器对象
  * ====================== */
- 	//var $ = require('jquery');
- 	console.log($);
  	var ipost = require('iPost');
  	var ilist = require('iList');
 
@@ -13,7 +11,7 @@ define(function(require, exports, module) {
  	};
 
  	container.prototype.render = function(){
- 		this.wrapper.html( (new ipost()).getAll());
+ 		this.wrapper.html(ipost.getAll());
  		this._init();
  	};
  	container.prototype._init = function(){	
@@ -25,13 +23,13 @@ define(function(require, exports, module) {
  			var className = btn.attr('class');
  			//目前是运行状态，点击后需要暂停
  			if(className.indexOf('stop') == -1){
- 				(new ipost()).end(id);
+ 				ipost.end(id);
  				//下面应该还有颜色提示
  				list.css('backgroundColor', '#F00');
  				btn.addClass('stop');
  			} else {
  				//开始监听帖子
- 				(new ipost()).begin(id);
+ 				ipost.begin(id);
  				btn.removeClass('stop');
  				list.css('backgroundColor', '#FFF');
  			}
@@ -42,7 +40,7 @@ define(function(require, exports, module) {
  			var id = btn.parent().parent().parent().attr('id'); //获取当前帖子的id
  			//在容器中删除帖子，并删除帖子的数据
  			$('#' + id).remove();
- 			(new ipost()).delete(id);
+ 			ipost.delete(id);
  		})
 
  		//在pop页面里面要打开链接必须用下面的方式
@@ -57,7 +55,7 @@ define(function(require, exports, module) {
  		var id = +(new Date());  //利用时间戳来作为id
  		var item = ilist.html(id, post);
       	this.wrapper.append(item);
-      	var post = new ipost(post.url, post.title, post.floor, post.tabid, post.status);
+      	var post = new ipost(post.url, post.title, post.floor, post.distance, post.tabid, post.status);
       	post.add(id);  //添加到数据库，并启动监听
  		return this;
  	};

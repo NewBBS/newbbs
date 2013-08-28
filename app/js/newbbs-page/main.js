@@ -31,6 +31,7 @@ define(function(require) {
           url: $('#tie-url').val(),
           title: $('#tie-title').val(),
           floor: $('#tie-floor').val(),
+          distance: 2,
           tabid: parseInt($('#tie-tabid').val()),
           status: 1
       })

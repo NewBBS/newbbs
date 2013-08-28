@@ -6,10 +6,11 @@ define(function(require, exports, module) {
  	var ilist = require('iList');
  	var bg = chrome.extension.getBackgroundPage();
 
- 	function Post(url, title, floor, tabid, status){
+ 	function Post(url, title, floor, distance, tabid, status){
  		this.url  = url || '';
  		this.title = title || '';
  		this.floor = floor || '';
+ 		this.distance = distance || '';
  		this.tabid = tabid || '';
  		this.status = status || '';
  	};
@@ -18,27 +19,27 @@ define(function(require, exports, module) {
  		chrome.tabs.executeScript(this.tabid, {file: "js/common/inject.js"});
  		//bg.recycle(this.tabid, this.url); 
  	};
- 	Post.prototype.begin = function(id){
+ 	Post.begin = function(id){
  		var tie = storage.get(id);
  		tie.status = 1;
  		storage.set(id, tie);
  		bg.recycle(tie.tabid, tie.url);
  	};
- 	Post.prototype.end = function(id){
+ 	Post.end = function(id){
  		var tie = storage.get(id);
  		tie.status = 0;
  		storage.set(id, tie);
  		var tid = storage.get(tie.url);
  		bg.stop(tid);
  	};
- 	Post.prototype.delete = function(id){
+ 	Post.delete = function(id){
  		var tie = storage.get(id);
- 		this.end(id); //如果在运行需要暂停时间函数
+ 		Post.end(id); //如果在运行需要暂停时间函数
  		storage.remove(tie.url);
  		storage.remove(storage.getKeyByValue(['url', tie.url]));
  	}
  	//获取数据库中所有的帖子数据
- 	Post.prototype.getAll = function(){
+ 	Post.getAll = function(){
  		var keys = storage.getAllKey();
  		var html = '';
 	    for(var i=0, len=keys.length;i<len; i++ ){

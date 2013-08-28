@@ -5,7 +5,7 @@
  	var storage = require('iStorage.js');
  	var frequency = require('iFrequency.js');
  	var notification = require('iNotification.js');
- 	var time;
+ 	window.tie_num = {};
  	//刷新页面并向新页面注入代码
 	function injectPage(tabid, url){
 		chrome.tabs.update(tabid, {url: url}, function(tab){
@@ -33,36 +33,37 @@
       port.onMessage.addListener(function(msg) {
       	var url = port.sender.url;
       	var tabid = port.sender.tab.id;
-      	var tid = storage.get(port.sender.url) || -1;
+      	var tid = storage.get(url);
         var key = storage.getKeyByValue(['url', url])
         var target_floor = storage.get(key).floor;  //获取用户输入的目标楼层
         var now_time = frequency.getTime(msg.floor, target_floor, tid);
         if(now_time){
-        	clearInterval(tid);
+        	tid && clearInterval(tid);
         	window.recycle(tabid, url, now_time);
         }
-        var u_distance = 1;   //用户输入的在目标帖子的误差范围
-        num = 2*u_distance;
+        var u_distance = storage.get(key).distance;   //用户输入的在目标帖子的误差范围
+        window.tie_num.tabid = 2*u_distance;
         var m_distance = u_distance + 1;
 	    if(msg.floor > target_floor-m_distance && msg.floor < target_floor+m_distance) {
 	     	//停止刷新，开始提交
-	     	clearInterval(storage.get(url));
+	     	clearInterval(tid);
 	     	chrome.tabs.onUpdated.addListener(submit);  //监听注入页面的刷新事件
-	     	chrome.tabs.update(tabid, {url: 'http://bbs.oa.com/forum/7935/thread/view/235015'});
-	     	//chrome.tabs.executeScript(port.sender.tab.id, {file: "js/common/submit.js"});
+	     	//chrome.tabs.update(tabid, {url: 'http://bbs.oa.com/forum/7935/thread/view/235015'});
+	     	chrome.tabs.executeScript(port.sender.tab.id, {file: "js/common/submit.js"});
 	    }
       })
     })
 
 	//在注入页面的刷新之后再注入提交代码
-    function submit(id){
-    	// if(!(--num)){
-    	// 	chrome.tabs.onUpdated.removeListener(submit);  //取消更新监听事件，当发帖数达到的时候
-    	// 	var obj = {img : 'a.jpg', title : '弹出', content : '你好'}
-    	// 	notification.show_normal_Notification(obj);
-    	// }
-    	chrome.tabs.update(id, {url: 'http://bbs.oa.com/forum/7935/thread/view/235015'}); 
- 		//chrome.tabs.executeScript(id, {file: "js/common/submit.js"});
+    function submit(id){  //chrome.tabs.onUpdated.addListener函数自带的参数，第一个就表示tabid
+    	if(!(--window.tie_num.tabid)){
+    		chrome.tabs.onUpdated.removeListener(submit);  //取消更新监听事件，当发帖数达到的时候
+    		var obj = {img : 'a.jpg', title : '弹出', content : '你好'}
+    		notification.show_normal_Notification(obj);
+    		return;
+    	}
+    	//chrome.tabs.update(id, {url: 'http://bbs.oa.com/forum/7935/thread/view/235015'}); 
+ 		chrome.tabs.executeScript(id, {file: "js/common/submit.js"});
  	}
 
 // var views = chrome.extension.getViews({type:"popup"});  获取不到前台的数据
