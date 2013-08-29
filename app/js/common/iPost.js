@@ -1,5 +1,5 @@
 define(function(require, exports, module) {
-/* 
+/*
  * 帖子对象
  * ====================== */
  	var storage = require('iStorage');
@@ -17,7 +17,7 @@ define(function(require, exports, module) {
  	Post.prototype.add = function(id){
  		storage.set(id, this);
  		chrome.tabs.executeScript(this.tabid, {file: "js/common/inject.js"});
- 		//bg.recycle(this.tabid, this.url); 
+ 		//bg.recycle(this.tabid, this.url);
  	};
  	Post.begin = function(id){
  		var tie = storage.get(id);

@@ -14,7 +14,9 @@ define(function(require, exports, module) {
  		this.wrapper.html(ipost.getAll());
  		this._init();
  	};
- 	container.prototype._init = function(){	
+ 	container.prototype._init = function(){
+    this.wrapper.children('.task-run').removeClass('task-run');
+
  		//开始，暂停
  		this.wrapper.on('click', '.play-btn', function(){
  			var btn = $(this);
@@ -25,13 +27,13 @@ define(function(require, exports, module) {
  			if(className.indexOf('stop') == -1){
  				ipost.end(id);
  				//下面应该还有颜色提示
- 				list.css('backgroundColor', '#F00');
+ 				list.addClass('task-run');
  				btn.addClass('stop');
  			} else {
  				//开始监听帖子
  				ipost.begin(id);
  				btn.removeClass('stop');
- 				list.css('backgroundColor', '#FFF');
+ 				list.removeClass('task-run');
  			}
  		})
  		//删除帖子
@@ -44,9 +46,15 @@ define(function(require, exports, module) {
  		})
 
  		//在pop页面里面要打开链接必须用下面的方式
-	    this.wrapper.on('click', '.task-item a', function(){
-	        chrome.tabs.create({'url': $(this).attr('href')});
-	    })
+    this.wrapper.on('click', '.task-item a', function(){
+        chrome.tabs.create({'url': $(this).attr('href')});
+    })
+
+    //控制栏task-bar展开事件
+    this.wrapper.on('click', '.task-item .edit-btn', function() {
+      $(this).closest('.task-item').toggleClass('task-edit');
+      return false;
+    });
 
  		return this;
  	};

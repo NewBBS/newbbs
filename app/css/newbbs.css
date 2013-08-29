@@ -249,6 +249,11 @@ input, textarea{
     }
   .task-list .item-bar{
     overflow: hidden;
+    height: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
   .task-list .item-bar .item-menu{
     margin-top: 12px;
@@ -266,6 +271,20 @@ input, textarea{
     .task-list .item-menu .set-btn:hover{
       color: #888;
     }
+  /* task-run */
+  .task-list .task-run .icon-play:before {
+    content: "\e02d";
+  }
+  .task-list .task-run, .task-list .task-run:hover{
+    border-left: 3px solid #468847;
+  }
+  .task-list .task-run .item-title, .task-list .task-run:hover .item-title{
+    color: #468847;
+  }
+  /* task-edit */
+  .task-edit .item-bar{
+    height: 29px;
+  }
 
 /* readerBox */
 .readerBox{}
@@ -290,7 +309,7 @@ input, textarea{
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .ipage .ipage-panel{
   width: 100%;
