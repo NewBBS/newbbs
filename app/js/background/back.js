@@ -38,14 +38,19 @@
         var target_floor = storage.get(key).floor;  //获取用户输入的目标楼层
         //第一次tid是不存在的
         var now_time = frequency.getTime(msg.floor, target_floor, tid);
+        //alert(now_time)
         if(now_time){
+          //alert(now_time)
         	tid && clearInterval(tid);
         	window.recycle(tabid, url, now_time);
         }
-        var u_distance = storage.get(key).distance;   //用户输入的在目标帖子的误差范围
+        var u_distance = parseInt(storage.get(key).distance);   //用户输入的在目标帖子的误差范围
+        //alert(u_distance)
         window.tie_num.tabid = 2*u_distance;
         var m_distance = u_distance + 1;
+        alert(target_floor)
 	    if(msg.floor > target_floor-m_distance && msg.floor < target_floor+m_distance) {
+        //alert('50')
 	     	//停止刷新，开始提交
 	     	clearInterval(tid);
 	     	chrome.tabs.onUpdated.addListener(submit);  //监听注入页面的刷新事件

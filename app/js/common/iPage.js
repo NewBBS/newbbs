@@ -10,10 +10,10 @@ define(function(require, exports, module) {
     init: function (element) {
         var self = this;
         this.$element = element;
-        console.log($(element).children('.active-panel'));
-        console.log(element.children('.active-panel'));
+        //console.log($(element).children('.active-panel'));
+        //console.log(element.children('.active-panel'));
         this.backArray = [];
-        this.$activePanel = $(element).children('.active-panel');
+        this.$activePanel = this.$element.children('.active-panel');
         //console.log(self.$activePanel)
 
         this.$element.on('click.go', '.ipage-panel .go-btn', function (event) {
@@ -47,7 +47,7 @@ define(function(require, exports, module) {
   $.fn.ipage = function (options) {
     return this.each(function () {
       var newIpage = new iPage($(this));
-      console.log('a', $(this))
+      //console.log('a', $(this))
     });
   }
 });

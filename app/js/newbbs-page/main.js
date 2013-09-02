@@ -22,7 +22,7 @@ define(function(require) {
               $('#tie-url').val(thisTab.url);
               $('#tie-tabid').val(thisTab.id);
               $('#tie-title').val(thisTab.title.substring(8));
-      });       
+      });
     });
 
     //点击完成新增一个监控帖子的记录
@@ -31,7 +31,7 @@ define(function(require) {
           url: $('#tie-url').val(),
           title: $('#tie-title').val(),
           floor: $('#tie-floor').val(),
-          distance: 500,
+          distance: parseInt($('#tie-range').val()),
           tabid: parseInt($('#tie-tabid').val()),
           status: 1
       })
