@@ -36,6 +36,7 @@
       	var tid = storage.get(url);
         var key = storage.getKeyByValue(['url', url])
         var target_floor = storage.get(key).floor;  //获取用户输入的目标楼层
+        //第一次tid是不存在的
         var now_time = frequency.getTime(msg.floor, target_floor, tid);
         if(now_time){
         	tid && clearInterval(tid);
