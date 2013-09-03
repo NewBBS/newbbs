@@ -15,25 +15,24 @@ define(function(require, exports, module) {
  		this._init();
  	};
  	container.prototype._init = function(){
-    this.wrapper.children('.task-run').removeClass('task-run');
-
  		//开始，暂停
  		this.wrapper.on('click', '.play-btn', function(){
  			var btn = $(this);
- 			var list = btn.parent().parent().parent();
+ 			var list = btn.closest('.task-item');
  			var id = list.attr('id');
  			var className = btn.attr('class');
  			//目前是运行状态，点击后需要暂停
  			if(className.indexOf('stop') == -1){
  				ipost.end(id);
  				//下面应该还有颜色提示
- 				list.addClass('task-run');
  				btn.addClass('stop');
+        list.removeClass('task-run');
  			} else {
  				//开始监听帖子
  				ipost.begin(id);
+        //chrome.tabs.executeScript(this.tabid, {file: "js/common/inject.js"});
  				btn.removeClass('stop');
- 				list.removeClass('task-run');
+ 				list.addClass('task-run');
  			}
  		})
  		//删除帖子
@@ -56,15 +55,21 @@ define(function(require, exports, module) {
       return false;
     });
 
+    //打开插件的时候要对目前
+    // $('.task-run').each(function(index){
+    //   var key = $(this).attr('id');
+    //   ipost.openCloseWin(key);
+    // })
+
  		return this;
  	};
  	//新建一个帖子对象，post是一个json对象
  	container.prototype.add = function(post){
  		var id = +(new Date());  //利用时间戳来作为id
  		var item = ilist.html(id, post);
-      	this.wrapper.append(item);
-      	var post = new ipost(post.url, post.title, post.floor, post.distance, post.tabid, post.status);
-      	post.add(id);  //添加到数据库，并启动监听
+  	this.wrapper.append(item);
+  	var post = new ipost(post.url, post.title, post.floor, post.distance, post.tabid, post.status);
+  	post.add(id);  //添加到数据库，并启动监听
  		return this;
  	};
 

@@ -17,7 +17,8 @@ define(function(require, exports, module) {
 				time = 60 * 1000;
 			} else if(floor < target_floor*0.8){
 				time = 30 * 1000;
-			} else if(floor < target_floor*0.9){
+			//} else if(floor < target_floor*0.9){
+			} else {
 				time = 1000;
 			}
 		}

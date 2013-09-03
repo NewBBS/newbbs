@@ -21,9 +21,21 @@ define(function(require, exports, module) {
  	};
  	Post.begin = function(id){
  		var tie = storage.get(id);
- 		tie.status = 1;
- 		storage.set(id, tie);
- 		bg.recycle(tie.tabid, tie.url);
+ 		if(tie.tabid) {
+ 			tie.status = 1;
+ 			storage.set(id, tie);
+ 			storage.set(tie.url, 0);
+ 			chrome.tabs.executeScript(tie.tabid, {file: "js/common/inject.js"});
+ 		} else {
+ 			chrome.tabs.create({url: tie.url}, function(tab){
+ 				tie.tabid = tab.id;
+ 				tie.status = 1;
+ 				storage.set(id, tie);
+ 				storage.set(tie.url, 0);
+ 				chrome.tabs.executeScript(tab.id, {file: "js/common/inject.js"});
+ 			})
+ 		}	
+ 		//bg.recycle(tie.tabid, tie.url);
  	};
  	Post.end = function(id){
  		var tie = storage.get(id);
@@ -50,5 +62,17 @@ define(function(require, exports, module) {
 	    }
 	    return html;
  	};
+ 	//检查当前监测的帖子是否已经被关闭，如果已经关闭就重新打开，是通过tabid的值来控制
+ 	Post.openCloseWin = function(key){
+ 		  var tie = storage.get(key);
+	      if(!tie.tabid) {
+	        chrome.tabs.create({url: tie.url}, function(tab){
+	          tie.tabid = tab.id;
+	          storage.set(id, tie);
+	          storage.set(tie.url, 0);
+	          chrome.tabs.executeScript(tab.id, {file: "js/common/inject.js"});
+	        })
+	      }
+ 	}
 	module.exports = Post;
 })
