@@ -49,8 +49,8 @@
 	     	//停止刷新，开始提交
 	     	clearInterval(tid);
 	     	chrome.tabs.onUpdated.addListener(submit);  //监听注入页面的刷新事件
-	     	chrome.tabs.update(tabid, {url: 'http://bbs.oa.com/forum/7935/thread/view/235015'});
-	     	//chrome.tabs.executeScript(port.sender.tab.id, {file: "js/common/submit.js"});
+	     	//chrome.tabs.update(tabid, {url: 'http://bbs.oa.com/forum/7935/thread/view/235015'});
+	     	chrome.tabs.executeScript(port.sender.tab.id, {file: "js/common/submit.js"});
 	    }
       })
     })
@@ -63,8 +63,8 @@
     		notification.show_normal_Notification(obj);
     		return;
     	}
-    	chrome.tabs.update(id, {url: 'http://bbs.oa.com/forum/7935/thread/view/235015'}); 
- 		//chrome.tabs.executeScript(id, {file: "js/common/submit.js"});
+    	//chrome.tabs.update(id, {url: 'http://bbs.oa.com/forum/7935/thread/view/235015'}); 
+ 		chrome.tabs.executeScript(id, {file: "js/common/submit.js"});
  	}
 
     chrome.tabs.onRemoved.addListener(function(tabid){
